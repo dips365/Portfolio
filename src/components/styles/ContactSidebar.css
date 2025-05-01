@@ -1,0 +1,102 @@
+.contact-sidebar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0.5rem;
+  z-index: 1000;
+}
+
+.contact-sidebar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.contact-sidebar-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #6366f1 60%, #8b5cf6 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(139,92,246,0.10);
+}
+
+.contact-sidebar-item:hover .contact-sidebar-icon {
+  box-shadow: 0 4px 16px rgba(139,92,246,0.18);
+  transform: scale(1.1);
+}
+
+.contact-sidebar-tooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #444b5a;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.13);
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: opacity 0.2s, right 0.2s;
+  z-index: 10;
+}
+
+.contact-sidebar-item:hover .contact-sidebar-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  right: 110%;
+}
+
+.contact-sidebar-tooltip a {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-sidebar-tooltip a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .contact-sidebar {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    transform: none;
+    padding: 1rem 0;
+    background: rgba(255,255,255,0.95);
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 -2px 16px rgba(99,102,241,0.10);
+  }
+  .contact-sidebar-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .contact-sidebar-tooltip {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    top: -60px;
+    transform: translateX(-50%);
+    white-space: pre-line;
+    padding: 0.6rem 1rem;
+  }
+} 

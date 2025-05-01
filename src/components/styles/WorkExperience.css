@@ -1,0 +1,199 @@
+.experience-section {
+    background: var(--background-secondary);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: 0 8px 32px rgba(99,102,241,0.10), 0 1.5px 8px rgba(139,92,246,0.08);
+    border: 1.5px solid #ececff;
+    width: 100%;
+    max-width: 1500px;
+    overflow: visible;
+}
+
+.experience-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.total-exp {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+    border: 2px solid #8b5cf6;
+    animation: glowBorder 2s infinite;
+}
+
+.journey-timeline {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    min-height: 200px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.journey-item {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    max-width: 320px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.journey-connector {
+    flex: 0 0 auto;
+    position: relative;
+    margin: 0 0.5rem;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey-connector::after {
+    content: '←';
+    color: #8b5cf6;
+    font-size: 2rem;
+    animation: slideArrow 1.5s infinite;
+    line-height: 1;
+}
+
+.company-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.2);
+}
+
+.company-card .company-name {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.company-card .position {
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.company-card .duration-badge {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.company-card .year-badge {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.responsibilities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.responsibilities li {
+    color: #4b5563;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.responsibilities li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #8b5cf6;
+    font-size: 0.9rem;
+}
+
+.location {
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location::before {
+    content: '📍';
+    font-size: 0.9rem;
+}
+
+@keyframes slideArrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+}
+
+@keyframes glowBorder {
+    0%, 100% { border-color: rgba(139, 92, 246, 0.5); }
+    50% { border-color: rgba(139, 92, 246, 1); }
+}
+
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    .journey-timeline {
+        padding: 1rem;
+        gap: 1rem;
+        min-height: 180px;
+    }
+
+    .journey-item {
+        min-width: 260px;
+        max-width: 280px;
+    }
+
+    .company-card {
+        padding: 1.2rem;
+        min-height: 160px;
+    }
+} 
